@@ -74,7 +74,13 @@ $(document).ready(function(){
     $("#day-" + viewed[i]).addClass("viewed");
   }
 
-  window.history.replaceState(null, document.title, "/#/");
+  var path = window.location.href.split("/");
+  if(path[path.length - 1] != "") {
+    var day = parseInt(path[path.length - 1]);
+    $("#day-" + day).click();
+  } else {
+    window.history.replaceState(null, document.title, "/#/");
+  }
 });
 
 function veil(show, complete) {

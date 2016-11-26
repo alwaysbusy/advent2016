@@ -2,11 +2,49 @@ var days = [5,12,11,23,8,15,3,21,9,18,1,22,6,13,20,19,7,10,2,14,24,17,4,16];
 var month = 12;
 var year = 2016;
 
+var storageVal = "calendarviewed-" + month + "-" + year;
+
+function getViewed() {
+  var viewed = localStorage.getItem(storageVal);
+  if(viewed != null) {
+    viewed = viewed.split(",");
+    for(var i in viewed) viewed[i] = parseInt(viewed[i]);
+  } else {
+    viewed = [];
+  }
+  return viewed;
+}
+
+function appendViewed(day) {
+  var viewed = getViewed();
+  if(viewed.indexOf(day) == -1) {
+    viewed.push(day);
+  }
+  localStorage.setItem(storageVal, viewed.join(","));
+}
+
 $(document).ready(function(){
   var veilDiv = document.createElement("div");
   veilDiv.setAttribute("id", "veil");
   veilDiv.style.display = "none";
   $("body").append(veilDiv);
+
+  var instructionDiv = document.createElement("div");
+  instructionDiv.setAttribute("id", "instruction");
+  instructionDiv.style.display = "none";
+  var close = document.createElement("button");
+  close.setAttribute("type", "button");
+  close.setAttribute("class", "close");
+  close.setAttribute("aria-label", "close");
+  var closeSpan = document.createElement("span");
+  closeSpan.setAttribute("aria-hidden", "true");
+  closeSpan.appendChild(document.createTextNode("\u00D7"));
+  close.appendChild(closeSpan);
+  instructionDiv.appendChild(close);
+  var instructions = document.createElement("div");
+  instructions.setAttribute("class", "container");
+  instructionDiv.appendChild(instructions);
+  $("body").append(instructionDiv);
 });
 
 $(document).ready(function(){
@@ -24,8 +62,16 @@ $(document).ready(function(){
     div.appendChild(document.createTextNode(days[day]));
     if(available) $(div).click(function(){
       veil(true);
+      instructions($(this).attr("data-day"), null, function(){veil(false);});
+      $(this).addClass("viewed");
+      appendViewed($(this).attr("data-day"));
     });
     calendar.append(div);
+  }
+
+  var viewed = getViewed();
+  for(var i in viewed) {
+    $("#day-" + viewed[i]).addClass("viewed");
   }
 });
 
@@ -38,4 +84,14 @@ function veil(show, complete) {
   } else {
     $("#veil").fadeOut(500, complete);
   }
+}
+
+function instructions(day, complete, close) {
+  $("#instruction .close").one("click", function(){
+    $("#instruction").fadeOut(500);
+  });
+  $("#instruction .close").one("click", close);
+  $("#instruction .container").load("day/" + day + ".part", function() {
+    $("#instruction").fadeIn(500, complete);
+  });
 }

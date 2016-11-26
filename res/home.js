@@ -83,6 +83,23 @@ $(document).ready(function(){
   }
 });
 
+function setupFeatures() {
+  $(this).find(".infobox").each(function(){
+    $(this).find(".infobox-details").hide();
+    $(this).find(".infobox-opener").click(function(){
+      $(this).parent().find(".infobox-details").slideToggle(300);
+    });
+  });
+
+  $(this).find("a").each(function(){
+    if(location.hostname !== this.hostname && this.hostname.length) {
+      $(this).attr("target", "_blank");
+    }
+  });
+}
+
+$(document).ready(setupFeatures);
+
 function veil(show, complete) {
   if(show == undefined) show = !($("#veil").css("display") == "block");
   if(complete == undefined) complete = null;
@@ -101,6 +118,7 @@ function instructions(day, complete, close) {
   });
   $("#instruction .close").one("click", close);
   $("#instruction .container").load("day/" + day + ".part", function() {
+    setupFeatures();
     $("#instruction").fadeIn(500, complete);
     window.history.pushState({"day":day}, "Advent Day " + day, "/#/" + day);
   });

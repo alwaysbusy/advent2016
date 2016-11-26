@@ -1,0 +1,66 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lobster', cursive;
+}
+
+#calendar {
+  background-image: url('calendar.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0px 0px 0px 0px;
+}
+
+#calendar .day {
+  font-family: 'Lobster', cursive;
+  font-size: 4em;
+  color: white;
+  font-weight: bold;
+  background-color: rgba(127,127,127,0.8);
+  transition: color 1s;
+}
+
+#calendar .day.available {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#calendar .day.available:hover {
+  color: rgb(127,127,127);
+}
+
+#calendar .day.viewed {
+  color: rgb(180,180,180);
+}
+
+#calendar .day.col-xs-4 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+#calendar .day.col-sm-3 {
+  padding-top: 21px;
+  padding-bottom: 21px;
+}
+
+#calendar .day.col-md-2 {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+#calendar .day.col-lg-2 {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+#veil {
+  background-color: rgba(32,32,32,0.7);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+footer {
+  margin-top: 16px;
+}

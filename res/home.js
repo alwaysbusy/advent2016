@@ -73,6 +73,8 @@ $(document).ready(function(){
   for(var i in viewed) {
     $("#day-" + viewed[i]).addClass("viewed");
   }
+
+  window.history.replaceState(null, document.title, "/#/");
 });
 
 function veil(show, complete) {
@@ -89,9 +91,19 @@ function veil(show, complete) {
 function instructions(day, complete, close) {
   $("#instruction .close").one("click", function(){
     $("#instruction").fadeOut(500);
+    window.history.pushState(null, document.title, "/#/");
   });
   $("#instruction .close").one("click", close);
   $("#instruction .container").load("day/" + day + ".part", function() {
     $("#instruction").fadeIn(500, complete);
+    window.history.pushState({"day":day}, "Advent Day " + day, "/#/" + day);
   });
 }
+
+window.addEventListener("popstate", function(event) {
+  if(event.state == null) {
+    $("#instruction .close").click();
+  } else if(event.state.day) {
+    $("#day-" + event.state.day).click();
+  }
+});

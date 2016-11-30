@@ -50,8 +50,7 @@ $(document).ready(function(){
 $(document).ready(function(){
   var calendar = $("#calendar");
   for (var day in days) {
-    //var available = today.getFullYear() > year || (year == today.getFullYear() && today.getMonth() + 1 > month) || (year == today.getFullYear() && month == today.getMonth() + 1 && today.getDate() >= days[day]);
-    var available = true;
+    var available = today.getFullYear() > year || (year == today.getFullYear() && today.getMonth() + 1 > month) || (year == today.getFullYear() && month == today.getMonth() + 1 && today.getDate() >= days[day]);
     var div = document.createElement("div");
     div.setAttribute("id", "day-" + days[day]);
     var classes = "col-lg-2 col-md-2 col-sm-3 col-xs-4 text-center day";

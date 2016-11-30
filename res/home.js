@@ -64,7 +64,7 @@ $(document).ready(function(){
       veil(true);
       instructions($(this).attr("data-day"), null, function(){veil(false);});
       $(this).addClass("viewed");
-      appendViewed($(this).attr("data-day"));
+      appendViewed(parseInt($(this).attr("data-day")));
     });
     calendar.append(div);
   }

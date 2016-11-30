@@ -1,2 +1,40 @@
 <h2>Day 1</h2>
-<p>This part is yet to be written</p>
+<p>The aim of this is to create a full e-card.  To start though, you'll need a web page</p>
+
+<h3>Page DOCTYPE</h3>
+<p>The requirements for HTML have changed over the years.  There's been several variations and versions of HTML.  Therefore, you need to specify which version you are using.</p>
+<pre><code>&lt;!DOCTYPE html&gt;</code></pre>
+<p>This is done using the DOCTYPE tag.  Every web page should start with a DOCTYPE to ensure it's version is interpreted correctly.  In this case, the version we will be using is "html".  This version is also known as HTML5, the latest version.</p>
+<p>DOCTYPE tags are different to other HTML tags in that they do not need to be closed and open with a bang (!) symbol.  This is to ensure backwards compatibility with other versions.</p>
+
+<h3>A HTML page</h3>
+<p>After the DOCTYPE has been specified the page can be started.  All tags need to be opened and closed.  In between, all content will have the rules of that tag applied to it.</p>
+<pre><code>&lt;html&gt;
+&lt;/html&gt;
+</code></pre>
+<p>The first tag is the opening tag, and the second is the closing.  You can tell it is a closing tag as it begins with a forward slash (/).  All other content will be placed within the HTML tag, since it is to be part of the HTML page.</p>
+
+<h3>Heads and Bodies</h3>
+<p>Pages are split into a head and a body.  The head of a page contains "hidden" information about a page, whilst the body contains the content that will be shown on screen.</p>
+<pre><code>  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+</code></pre>
+<p>The head section contains information such as the pages title (which you see in the title bar of the browser), styles, scripts (covered later) and other meta-data (information used by browsers and search engines to learn more about the page).  The simplest starting point is to add a title using the title tag.</p>
+<pre><code>  &lt;head&gt;
+    &lt;title&gt;Merry Christmas&lt;/title&gt;
+  &lt;/head&gt;
+</code></pre>
+
+<h3>Adding some content</h3>
+<p>There needs to be content on the page for people to read it.  This is done in the body tag.</p>
+<pre><code>  &lt;body&gt;
+    &lt;h1&gt;Merry Christmas&lt;/h1&gt;
+    &lt;p&gt;and a Happy New Year&lt;/p&gt;
+  &lt;/body&gt;
+</code></pre>
+<p>This will display the text across two lines, with Merry Christmas being in larger text.  The larger text is caused by the h1 tag instructing the browser to render it as heading text.  The p tag means it is a paragraph of text (or normal text).  It is best practice to put main text into paragraphs (this doesn't include text in menus or captions).</p>
+
+<h3>Putting it all together</h3>
+<p>Once all of this is combined you get a pretty simple page, but one that can be easily extended over the next few days.</p>

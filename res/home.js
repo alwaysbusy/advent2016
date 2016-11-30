@@ -49,6 +49,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   var calendar = $("#calendar");
+  var today = new Date();
   for (var day in days) {
     var available = today.getFullYear() > year || (year == today.getFullYear() && today.getMonth() + 1 > month) || (year == today.getFullYear() && month == today.getMonth() + 1 && today.getDate() >= days[day]);
     var div = document.createElement("div");

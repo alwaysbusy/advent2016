@@ -98,6 +98,10 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 2999;
 }
 
+#instruction .actions {
+  margin-bottom: 16px;
+}
+
 footer {
   margin-top: 16px;
 }

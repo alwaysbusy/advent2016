@@ -83,18 +83,34 @@ $(document).ready(function(){
   }
 });
 
-function setupFeatures() {
-  $(this).find(".infobox").each(function(){
+function setupFeatures(selector) {
+  if(selector == undefined) selector = document;
+
+  $(selector).find(".infobox").each(function(){
     $(this).find(".infobox-details").hide();
     $(this).find(".infobox-opener").click(function(){
       $(this).parent().find(".infobox-details").slideToggle(300);
     });
   });
 
-  $(this).find("a").each(function(){
+  $(selector).find("a").each(function(){
     if(location.hostname !== this.hostname && this.hostname.length) {
       $(this).attr("target", "_blank");
     }
+  });
+
+  $(selector).find(".sample").click(function(){
+    window.open("day/" + $(this).attr("data-view") + ".html", "sampleWindow", "chrome=yes,centerscreen=yes,status=no,personalbar=no,location=yes,toolbar=no,menubar=no");
+  });
+
+  $(selector).find(".download").click(function(){
+    var downloader = document.createElement("a");
+    downloader.setAttribute("id", "hiddenDl");
+    downloader.setAttribute("href", "day/" + $(this).attr("data-view") + "." + $(this).attr("data-download"));
+    downloader.setAttribute("download", $(this).attr("data-view") + "." + $(this).attr("data-download"));
+    $("body").append(downloader);
+    downloader.click();
+    downloader.remove();
   });
 }
 
@@ -118,7 +134,7 @@ function instructions(day, complete, close) {
   });
   $("#instruction .close").one("click", close);
   $("#instruction .container").load("day/" + day + ".part", function() {
-    setupFeatures();
+    setupFeatures(this);
     $("#instruction").fadeIn(500, complete);
     window.history.pushState({"day":day}, "Advent Day " + day, "./#/" + day);
   });

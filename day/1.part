@@ -38,3 +38,8 @@
 
 <h3>Putting it all together</h3>
 <p>Once all of this is combined you get a pretty simple page, but one that can be easily extended over the next few days.</p>
+
+<div class="btn-group actions" role="group">
+  <button type="button" class="btn btn-primary sample" data-view="1">View Sample</button>
+  <button type="button" class="btn btn-default download" data-view="1" data-download="html">Download Sample</button>
+</div>

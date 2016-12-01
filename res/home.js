@@ -79,7 +79,7 @@ $(document).ready(function(){
     var day = parseInt(path[path.length - 1]);
     $("#day-" + day).click();
   } else {
-    window.history.replaceState(null, document.title, "/#/");
+    window.history.replaceState(null, document.title, "./#/");
   }
 });
 
@@ -114,13 +114,13 @@ function veil(show, complete) {
 function instructions(day, complete, close) {
   $("#instruction .close").one("click", function(){
     $("#instruction").fadeOut(500);
-    window.history.pushState(null, document.title, "/#/");
+    window.history.pushState(null, document.title, "./#/");
   });
   $("#instruction .close").one("click", close);
   $("#instruction .container").load("day/" + day + ".part", function() {
     setupFeatures();
     $("#instruction").fadeIn(500, complete);
-    window.history.pushState({"day":day}, "Advent Day " + day, "/#/" + day);
+    window.history.pushState({"day":day}, "Advent Day " + day, "./#/" + day);
   });
 }
 

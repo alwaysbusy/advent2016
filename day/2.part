@@ -1,0 +1,53 @@
+<h2>Day 2</h2>
+<p>Day 1 created a very basic web page.  Today we're going to add more elements to help us make up a well organised page.</p>
+
+<h3>Sections and Divs</h3>
+<p>Several tags exist to structure the page better without changing the pages appearance by default.  Some of these are more general, others have specific uses.</p>
+<pre><code> &lt;section&gt;
+    Text can go here
+  &lt;/section&gt;
+</code></pre>
+<p>The section tag is used to represent a section of an article, which would be made up of several paragraphs.  Section would be suitable for the e-card, since the different features we put in it will be different sections of the same page.</p>
+<p>There are other tags like this, such as article, which don't apply formatting but provide the browser with meaning for your content.  All of these tags behave like a div tag, meaning division.  Divs have existed for longer than section or article tags, and simply mean divisions of a page.  They're commonly used to construct page layouts by applying styles to them (more on those later).</p>
+<pre><code> &lt;div&gt;
+    &lt;div&gt;
+      &lt;p&gt;You can nest divs, and put other tags in them as well&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+
+<h3>Headings</h3>
+<p>Headings are used to introduce different sections.  They work in a very similar way to the different headings in a word processing package, and will style automatically in your browser.</p>
+<pre><code>  &lt;h1&gt;Level 1&lt;/h1&gt;
+  &lt;h2&gt;Level 2&lt;/h2&gt;
+  &lt;h3&gt;Level 3&lt;/h3&gt;
+  &lt;h4&gt;Level 4&lt;/h4&gt;
+  &lt;h5&gt;Level 5&lt;/h5&gt;
+  &lt;h6&gt;Level 6&lt;/h6&gt;
+</code></pre>
+<p>There are 6 levels of headings altogether.  Headings, and other text tags, can also contain span tags within them.  At the moment, span tags don't do much but they can be used to create separate stylable sections without breaking the flow of text (as divs and sections would do).</p>
+<pre><code>  &lt;h1&gt;
+    Merry &lt;span&gt;Christmas&lt;/span&gt;
+  &lt;/h1&gt;
+</code></pre>
+
+<h3>Paragraphs</h3>
+<p>We saw paragraphs in our (now modified) code sample yesterday.</p>
+<pre><code>  &lt;body&gt;
+    &lt;section&gt;
+      &lt;h1&gt;Merry &lt;span&gt;Christmas&lt;/span&gt;&lt;/h1&gt;
+      &lt;p&gt;and a Happy New Year&lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/body&gt;
+</code></pre>
+<p>Paragraphs and headings will render as "blocks", meaning they will occupy their own lines and other content can't appear next to them.  They also create margins around the text to leave a buffer between their text and other text on the page (what this is by default depends on your browser).</p>
+<div class="alert alert-info"><strong>Indentation</strong> will help with readability of code as your page grows.  So long as you don't indent in the middle of text then it won't affect how your page appears.</div>
+
+<h3>Add some sections</h3>
+<p>Try placing some sections in your e-card (maybe one for each major achievement throughout the year, month or part of your message).  Then add a heading to each and some text to explain what happened.</p>
+<p>Leave the "Merry Christmas" section at the end.  You may also wish to add a bit of a teaser section at the start (see it as the cover, with the other sections being different pages in those cards with really long messages that no-one reads (but people will read this one)).</p>
+
+<div class="btn-group actions" role="group">
+  <button type="button" class="btn btn-primary sample" data-view="2">View Sample</button>
+  <button type="button" class="btn btn-default download" data-view="2" data-download="html">Download Sample</button>
+</div>

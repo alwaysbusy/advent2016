@@ -105,3 +105,18 @@ h1, h2, h3, h4, h5, h6 {
 footer {
   margin-top: 16px;
 }
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background: rgba(200,200,200,0.7);
+    margin: 4px 4px 4px 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: rgba(127,127,127,0.7);
+}

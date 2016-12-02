@@ -1,0 +1,40 @@
+<h2>Day 3</h2>
+<p>Text is all well and good, but there's nothing like a good picture to bring content to life.</p>
+
+<h3>Images</h3>
+<p>Images are added as tags.  These tags however need parameters to be specified in order to make them work.  Image tags also don't contain any data so they self-close (by putting the forward slash at the end).</p>
+<pre><code> &lt;img src="res/nouse.png" alt="Screenshot of the Nouse Website" title="Nouse Website" /&gt;
+</code></pre>
+<p>The src parameter is the most important of all, as it provides the location of the image. In this case it is in a folder called res, and the image is called nouse.png.  To avoid issued with image location you can store images in the same folder as your webpage and simply refer to them by the filename, or as a folder path that start in the same folder as the page.  The alt tag provides some text that will be displayed if the image cannot be loaded.  The title tag provides text that will appear if the user hovers over the image, which isn't required.</p>
+<p>When you insert an image it will just insert at the size it was saved as.  There are a couple of ways to change the style of the image, one of which is covered tomorrow.</p>
+
+<h3>Finding images online</h3>
+<p>There are various sources of finding images to use online if you want to illustrate something and you haven't taken an appropriate image yourself.  You need to take care to ensure that any images that you use are licensed for you to use in your e-card.</p>
+<h4>Unsplash (Creative Commons 0/Public Domain)</h4>
+<p><a href="https://unsplash.com">Unsplash.com</a> offer images which are licensed under Creative Commons 0 (CC0).  This lets you use the images from the site for any purpose (including commercial/for profit) without needing to provide any credit.</p>
+<p>Images like this are also known as public domain, since they are for use by the public without any restrictions.  Other images under this sort of license include photos from <a href="https://www.nasa.gov/multimedia/imagegallery/index.html">NASA</a>.  There is a more complete list from the <a href="https://en.wikipedia.org/wiki/Wikipedia:Public_domain_image_resources">Wikimedia Foundation</a>.</p>
+<h4>Google Image Search (Creative Commons/other attribution licenses)</h4>
+<p>Many people release their works for the public to use however require (as a minimum) some form of acknowledgement.  <a href="https://www.google.co.uk/imghp">Google Images</a> can help you find this sort of content easily.  Once you have performed a search, use the Usage Rights dropdown (available by clicking on the Tools button below the search box) to choose the appropriate reuse criteria.</p>
+<p>Modification in terms of images usually refers to the image itself, not anything that the image may be a part of.  If you're unsure always look at the licence in details before using the image.  For Creative Commons images, <a href="https://creativecommons.org/licenses/#licenses">human readable descriptions</a> are available to assist you.</p>
+<p>Non-Creative Commons images may be available to use, such as from <a href="http://www.freedigitalphotos.net/">FreeDigitalPhotos.net</a>.  Sites like this often place heavier restrictions on what you can do with the images.</p>
+<h4>Commercial Image Providers</h4>
+<p>There are a few ways to get images from commercial providers.  If you hire a photographer then you'll need to check if they just license the images to you or if you own the images outright, and if they have any attribution requirements.  Stock Photo companies also licence high-quality images for you to use.  Their pricing is often based on how large the image you want to use is and what size of audience you are likely to have, but will always allow you to use their images without attributing them further.</p>
+
+<h3>Providing attribution</h3>
+<p>Image captions can be provided by converting your photo into a figure.  Placing an img tag and a figcaption tag within a figure tag will allow web pages to receive the appropriate information about the image and render it correctly.</p>
+<pre><code>  &lt;figure&gt;
+    &lt;img src="res/nouse.png" alt="Screenshot of the Nouse Website" title="Nouse Website" /&gt;
+    &lt;figcaption&gt;The <strong>Nouse</strong> website - &copy; Nouse 2016&lt;/figcaption&gt;
+  &lt;/figure&gt;
+</code></pre>
+<p>Figure captions allow the use of additional tags within them.  What the strong tag does will be apparent in the sample, but is covered again later.  The copyright symbol can be displayed by entering &amp;copy; in your pages code.</p>
+
+<h3>Images for everything</h3>
+<p>Find an image that can be displayed with each section and add it in.  You may also wish to find images now which you can use in the background later.</p>
+<p>The result won't look pretty to start with, but it will get better...tomorrow.</p>
+<div class="alert alert-warning"><strong>Attribution</strong> is extremely important as you can easily find yourself on the wrong side of a legal battle if neglected.  If you're unsure if you can use an image, then don't.</div>
+
+<div class="btn-group actions" role="group">
+  <button type="button" class="btn btn-primary sample" data-view="3">View Sample</button>
+  <button type="button" class="btn btn-default download" data-view="3" data-download="html">Download Sample</button>
+</div>

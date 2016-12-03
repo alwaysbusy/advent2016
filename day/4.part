@@ -1,0 +1,54 @@
+<h2>Day 4</h2>
+<p>Now that we have content we need to make it look nice.</p>
+
+<h3>Bootstrap</h3>
+<p>Bootstrap was designed by Twitter as a way of quickly building HTML UIs for their internal applications which looked good.  It was then released to the public as an open-source tool.  To start using it all you need to do is include it as a linked resource in the head of your page.</p>
+<pre><code> &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"&gt;
+</code></pre>
+<p>The link tag is one of the few tags in HTML which does not require closing.</p>
+<p>With this alone you should instantly notice changes in how your page is displayed, such as text sizes, styles and font.</p>
+<div class="btn-group actions" role="group">
+  <button type="button" class="btn btn-primary sample" data-view="4A">View Sample</button>
+</div>
+
+<h3>Using the grid system</h3>
+<p>The grid system in Bootstrap lets you easily position elements on screen based on rows an columns.  A row is created by giving an element the class of "container".  In the case of our e-card, we'll want to create a new div with that class inside each section, and then place our content inside that div.</p>
+<pre><code> &lt;section&gt;
+    &lt;div class="container"&gt;
+      &lt;p&gt;Content goes here&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+</code></pre>
+<p>This on it's own will move all of the content into a fixed width container in the centre of the page.  This however won't have fixed the appearance of images which will still be at their full width and height.  If you want to create further rows within a container then create a div and give it the class "row".</p>
+<p>The images will need to be placed into a column (which can be done in the img tag itself) by giving it a class.  In Bootstrap, there are 12 columns in a row.  Therefore, to make an image the 'same' width as all text, it would need to be given the class "col-md-12".  The md refers to the grid system we're using, as there are 4 different column widths available depending on the screen size.  If the element doesn't need to change size based on the screen size, then it can be left with just the one class.</p>
+<pre><code> &lt;section&gt;
+    &lt;div class="container"&gt;
+      &lt;img src="res/nouse.png" alt="Screenshot of the Nouse website" title="The Nouse website" class="col-md-12" /&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+</code></pre>
+<p>If you include the word offset in the class, such as "col-md-offset-2", then it will place on offset of 2 columns to the left of the column.  It won't change the columns width but will give a buffer if you want your column to be separated from other content or to align it better.</p>
+<p>Full information on how to use the grid system is on the <a href="http://getbootstrap.com/css/#grid">Bootstrap website</a>.</p>
+<div class="alert alert-info">When we say the same width, we actually mean about 60px narrower as bootstrap applies a gutter to column layouts.</div>
+
+
+<h3>Other things you can do with Bootstrap</h3>
+<p>As well as a grid system, Bootstrap provides classes to help with text alignment, buttons and much more.</p>
+<h4>Text alignment</h4>
+<p>If you want to have your text elsewhere on the screen other than to the left hand side then you can use "text-left", "text-center" and "text-right" to change positioning.</p>
+<pre><code>  &lt;h2 class="text-center"&gt;Your Heading&lt;/h2&gt;
+</code></pre>
+<h4Images</h4>
+<p>As an alternative to using the grid system for images specifically (remember, thr gird system applies to all elements), you could use the "img-responsive" class instead which will match the image width to the rest of the page.</p>
+<p>Images can also be styled by applying the "img-rounded", "img-circle" or "img-thumbnail" classes to automatically generate different effects around the images.</p>
+<h4>Forms and Buttons</h4>
+<p>Bootstrap also provides styling changes for forms and buttons to give them a consistent appearance across browsers.  We don't need to use either of these, but they are used on the advent calendar itself.</p>
+
+<h3>Changing the appearance</h3>
+<p>Apply different styles to your e-card to get an appearance that you like the look of.</p>
+<p>How it looks doesn't need to be set in stone.  Once you've added a class you can test and remove it again if you don't like how it looks.</p>
+
+<div class="btn-group actions" role="group">
+  <button type="button" class="btn btn-primary sample" data-view="4">View Sample</button>
+  <button type="button" class="btn btn-default download" data-view="4" data-download="html">Download Sample</button>
+</div>

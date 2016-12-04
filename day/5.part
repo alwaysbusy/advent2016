@@ -1,0 +1,53 @@
+<h2>Day 5</h2>
+<p>Bootstrap has made our page look nicer.  We can also style it ourselves to improve it further.</p>
+
+<h3>Cascading Style Sheets</h3>
+<p>Cascading Style Sheets (CSS) are used to define how web pages look.  There are a few ways styles can be included in web pages: in a style tag, inline with elements or in a .css file.  To include a .css file, add it as a link in the head of the page (like was done for Bootstrap).</p>
+<pre><code> &lt;link rel="stylesheet" href="style.css" &gt;
+</code></pre>
+<p>This will include a style file from the same folder as the page.  Make sure it is the last stylesheet that you link to, as the order you link styles in is the order they are applied in.</p>
+
+<h3>Selecting content to style</h3>
+<p>CSS styles are given within curly braces after the selector for what the style should be applied to.  Elements are styled by typing the name of the element before the curly braces (eg. section).  Classes are chosen by placing a dot before the class name (eg. .container).  Individual items can be chosen based on their id property by placing a hash before the id (eg. #menu).  You can combine selectors by using spaces to find elements which are nested within one another, or use commas to select more than one element.</p>
+<pre><code>section {}
+.container {}
+#menu {}
+section.container {}
+#menu .container {}
+section, .container {}
+</code></pre>
+
+<h3>Specifying Heights and Widths</h3>
+<p>CSS properties are given as key-value pairs which are separated by colons, with each pair being terminated with a semi-colon.  In the case of sizes you need to provide the numeric value an unit you are using.  If you want something to scale based on the size of the element containing it then you can use percentages (denoted by ending the number with a percent sign).  You can also give an absolute number of pixels for the size (by ending the number with px).</p>
+<p>Another commonly available size option is to say "auto", which will automatically choose the right size based on the elements other properties.  This is often what a size will default to if no other value is given.</p>
+<p>For the e-card, each section represents a page in a traditional card so we want each section to be page sized.  This is done by setting the width to be the full browser width and the height to be at least the page height.</p>
+<pre><code>section {
+  width: 100%;
+  min-height: 100%;
+}
+</code></pre>
+<p>Doing this on it's own won't work, as the min-height is reliant on the size of the page.  You'll also need to configure the height of the page itself.</p>
+<pre><code>html, body {
+  height: 100%;
+}
+</code></pre>
+
+<h3>Background images</h3>
+<p>You may also wish to add background images to sections.  Background colours can also be added, but are handled differently.</p>
+<p>The background image is given by giving the background as a URL in CSS.  You also need to specify how the website should handle the positioning, sizing and repetition of the background.  Each of these is a different property so will need to be given in a separate key-value pair for the element.  Adding a background image is best done with an id for the element you wish to add the background to so it won't add to all elements of that type/class automatically.</p>
+<pre><code>#touchright {
+  background-image: url(trbg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+</code></pre>
+
+<h3>Making other changes</h3>
+<p>Make some changes to how things are styled to suit what you would want your card to look like.</p>
+<p>It is possible to use CSS to position elements both horizontally and vertically in the centre of the screen.  Some online research should tell you how.</p>
+
+<div class="btn-group actions" role="group">
+  <button type="button" class="btn btn-primary sample" data-view="5">View Sample</button>
+  <button type="button" class="btn btn-default download" data-view="5" data-download="html">Download Sample</button>
+</div>

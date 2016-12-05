@@ -50,4 +50,5 @@ section, .container {}
 <div class="btn-group actions" role="group">
   <button type="button" class="btn btn-primary sample" data-view="5">View Sample</button>
   <button type="button" class="btn btn-default download" data-view="5" data-download="html">Download Sample</button>
+  <button type="button" class="btn btn-default download" data-view="5" data-download="css">Download Stylesheet</button>
 </div>

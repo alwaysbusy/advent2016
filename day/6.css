@@ -1,0 +1,47 @@
+html, body {
+  height: 100%;
+}
+
+section {
+  width: 100%;
+  min-height: 100%;
+}
+
+.verticle-center {
+  position: relative;
+}
+
+.verticle-center .inner {
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+#intro {
+  color: white;
+  background-color: #AA3939;
+}
+
+#nouse {
+  color: white;
+  background-color: #2D0B9B;
+}
+
+#touchright {
+  background-image: url("../res/trbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  background-color: grey;
+}
+
+#advent {
+  background-color: white;
+  color: black;
+}
+
+#greeting {
+  background-color: #EC0C00;
+  color: white;
+}

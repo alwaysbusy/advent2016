@@ -1,0 +1,39 @@
+<h2>Day 6</h2>
+<p>Now we have laid out content, another aspect of it's appearance is colour.</p>
+
+<h3>Finding colours that work</h3>
+<p>Colour is much more than a means to an end.  It is an integral part of the design of your site.  Several services exist to help find complimentary colours that work with one another.  <a href="http://paletton.com/">Paletton</a> is one such service which allows you to specify colours and then finds other colours which will work.</p>
+<p>You can also use a drawing program such as Microsoft Paint to choose colours and find out the codes you will need to use when specifying the colour in your CSS file.  In particular you either need the RGB (Red, Green, Blue) values, or the hex value (which begins with a hash).</p>
+
+<h3>Specifying colour values</h3>
+<h4>RGB values</h4>
+<p>Using the Red, Green and Blue values of a colour can be done by ordering the colours within an rgb block.  All RGB values are integers between 0 and 255.  Another scheme called RGBA exists which also lets you specify a decimal between 0 and 1 to say how opaque the colour should be (where 0 is completely transparent).</p>
+<pre><code>rgb(r,g,b)
+rgba(r,g,b,a)
+</code></pre>
+<h4>Hex value</h4>
+<p>Hex values represent the colour in six characters, preceded by a hash.  The character values are numbers 0-9 and the letters A-F (where 0 is the lowest and F is the highest).</p>
+<pre><code>#37AFB8
+</code></pre>
+<h4>Name</h4>
+<p>For common colours, such as grey, blue and pink, you can also provide the name of colour which will then select that colour.  Colours should be consistent across all browsers.</p>
+<h4>Inherit</h4>
+<p>By default, the browser will choose the colour it thinks is best.  This can cause issues for links which will appear in a different colour to the rest of the page.  Setting the colour to "inherit" will use the colour of the parent element, rather than letting the browser choose.</p>
+
+<h3>The main coloured properties</h3>
+<p>Commonly text colour, background colour and border colour are changes on web pages.  The CSS properties for these are named as you would mostly expect; color, background-color and border-color respectively.  Note that CSS will use American English spellings of words.</p>
+<pre><code>section {
+  color: red;
+  background-color: rgb(0, 255, 0);
+  border-color: #0000FF;
+}
+</code></pre>
+
+<h3>Choosing section colours</h3>
+<p>Each section of the e-card would benefit from having a coloured background.  This is worth doing even if there is an image as the colour will load faster than the background image.  You may also need to change the text colour to allow it to be read clearly.</p>
+
+<div class="btn-group actions" role="group">
+  <button type="button" class="btn btn-primary sample" data-view="6">View Sample</button>
+  <button type="button" class="btn btn-default download" data-view="6" data-download="html">Download Sample</button>
+  <button type="button" class="btn btn-default download" data-view="6" data-download="css">Download Stylesheet</button>
+</div>
